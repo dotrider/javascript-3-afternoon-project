@@ -11,32 +11,33 @@
   In the example below, we are accessing the property values. Uncomment the code below, run it and look at what prints in the console.
 */
 
-// var values = {
-//   one: 'These',
-//   two: ' are',
-//   three: ' the',
-//   four: ' property',
-//   five: ' values.'
-// } 
+var values = {
+  one: 'These',
+  two: ' are',
+  three: ' the',
+  four: ' property',
+  five: ' values.'
+} 
 
-// for(var key in values) {
-//   console.log(values[key])
-// }
+for(var key in values) {
+  // console.log(values[key])
+}
 
 /*
   In this next example, we are accessing the property names themselves. Uncomment the code below, run it and look at what prints in the console.
 */
 
-// for(var key in values) {
-//   console.log(key)
-// }
+for(var key in values) {
+  // console.log(key)
+}
 
 
 
 ////////// PROBLEM 1 //////////
 
 /*
-  Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
+  Inside the function showValues, write a for in loop that concatenates each of the 
+  property values and returns the concatenated string.
 */
 
 function showValues( obj ) {
@@ -104,17 +105,27 @@ function double(obj){
 
 //Code Here
 function secrets(obj){
-  let emptyStr;
+  let emptyArr = [];
+  // let emptyStr = ""
+  // console.log(obj)
   // console.log(emptyStr)
     for(var key in obj){
-     
-      if(obj.key.startsWith('sh')){
-        console.log('hit')
-        // emptyStr.push(objectKeyName + obj[key]);
+    //  console.log(`${key}`)
+      if(key.startsWith('sh')){
+        // console.log("hit")
+        // console.log(obj[key])
+       emptyArr.push(obj[key]);
+      // console.log(emptyArr)
       }
     }
+    // console.log(emptyArr)
+
+    // emptyStr = emptyArr.join('')  
+    emptyArr = emptyArr.join('')
+    // console.log(emptyArr)  
     // console.log(emptyStr)
-    return emptyStr;
+    return emptyArr
+
 }
 
 
@@ -130,8 +141,8 @@ function secrets(obj){
 //   three: 3
 // }
 
-// for(var key in deleteAllThethings) {
-//   delete deleteAllThethings[key]
+// for(var key in deleteAllTheThings) {
+//   delete deleteAllTheThings[key]
 // }
 
 // console.log(deleteAllThethings)
@@ -147,10 +158,10 @@ function secrets(obj){
 
 //Code Here
 
-// function removePassword(obj){
-//   delete obj.password;
-//   return obj;
-// }
+function removePassword(obj){
+  delete obj.password;
+  return obj;
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -161,6 +172,7 @@ var deleteTheBigNumbers = {
   third: 110,
   fourth: 200
 }
+
 // Do not edit the code above.
 
 /*
@@ -168,13 +180,12 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-// function deleteTheBigNumbers(obj){
-//   for(var key in obj){
-//     if(obj[key] > 100){
-//       delete obj[key];
-//     }
-//   }
-// }
+
+for(var key in deleteTheBigNumbers){
+  if(deleteTheBigNumbers[key] > 100){
+    delete deleteTheBigNumbers[key];
+  }
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -187,14 +198,16 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-// function startsWithK(obj){
-//   for(var key in obj){
-//     if(obj[key].startsWith('k')){
-//       delete obj.key;
-//     }
-//   }
-//   return obj;
-// }
+function startsWithK(obj){
+  for(var key in obj){
+    if(key.startsWith('k')){
+      // console.log(obj)
+      delete obj[key];
+      // console.log(obj)
+    }
+  }
+  return obj;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -210,11 +223,14 @@ var deleteTheBigNumbers = {
 
 //Code Here
 
-// function hiddenTreasure(obj){
-//   for(var key in obj){
-//     if(!obj[key].contains('treasure')){
-//       delete obj[key];
-//     }
-//   }
-//   return obj;
-// }
+function hiddenTreasure(obj){
+  for(var key in obj)
+  // console.log(obj)
+  {
+    if(!obj[key].includes('treasure')){
+      delete obj[key];  
+      // console.log(obj)
+    }
+  }
+  return obj;
+}

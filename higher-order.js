@@ -26,7 +26,6 @@ let evenNumbers = mixedNumbers.filter(function(nums){
 }); // = mixedNumbers.filter(/* Provide Your Callback Here */)
 
 
-
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
@@ -98,7 +97,11 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 //Code Here
-let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+let myStrongest = monstersInYourPocket.filter(function(monster){
+  return monster.CP > 200;
+});
+// console.log(myStrongest)
+// = monstersInYourPocket.filter(/* Provide Your Callback Here */)
 
 
 
@@ -117,9 +120,10 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 */
 
  // Code here
-  let orderTotals = orders.map(function(orderTotal){
-      orderTotal = orderTotal.price * orderTotal.tax;
+  let orderTotals = orders.map(function(total){
+     return total.price + total.price * total.tax;
   });
+  // console.log(orderTotals)
 
 ////////// PROBLEM 6 //////////
 
@@ -137,6 +141,12 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal //Code Here
+let bobsTotal = purchases.reduce(function(total,e){
+  if(e.owner === 'Bob'){
+    return total += e.price;
+  }
+  return total
+},0)//Code Here
+// console.log(bobsTotal)
 
 
